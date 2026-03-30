@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+
+  api:
+    build: .
+    container_name: api
+    command: ./api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+  worker:
+    build: .
+    container_name: worker
+    command: ./worker
+    depends_on:
+      - redis
