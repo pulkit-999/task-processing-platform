@@ -30,6 +30,7 @@ It supports:
 ---
 
 ## 🏗️ Architecture
+![Architecture](assets/architecture.png)
 
 ```
 Client
